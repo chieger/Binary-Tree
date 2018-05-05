@@ -13,3 +13,18 @@ class TreeNode {
    }
 }
 
+/*
+Binary Tree Example (Well Balanced)
+
+    1 <-Root
+   / \
+  2   3 <-Children
+ / \
+4   5 <-Leaves
+*/
+
+let threeTreeNode = TreeNode(val: 3, left: nil, right: nil)
+let fourTreeNode = TreeNode(val: 4, left: nil, right: nil)
+let fiveTreeNode = TreeNode(val: 5, left: nil, right: nil)
+let twoTreeNode = TreeNode(val: 2, left: fourTreeNode, right: fiveTreeNode)
+let oneTreeNode = TreeNode(val: 1, left: twoTreeNode, right: threeTreeNode)
