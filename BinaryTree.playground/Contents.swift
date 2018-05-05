@@ -2,4 +2,14 @@
 
 import UIKit
 
-var str = "Hello, playground"
+class TreeNode {
+   var val: Int
+   var left: TreeNode?
+   var right: TreeNode?
+   init(val: Int, left: TreeNode?, right: TreeNode?) {
+      self.val = val
+      self.left = left
+      self.right = right
+   }
+}
+
