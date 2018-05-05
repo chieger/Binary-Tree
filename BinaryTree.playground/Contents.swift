@@ -28,3 +28,17 @@ let fourTreeNode = TreeNode(val: 4, left: nil, right: nil)
 let fiveTreeNode = TreeNode(val: 5, left: nil, right: nil)
 let twoTreeNode = TreeNode(val: 2, left: fourTreeNode, right: fiveTreeNode)
 let oneTreeNode = TreeNode(val: 1, left: twoTreeNode, right: threeTreeNode)
+
+
+// #1: Print nodes "inorder"
+// Expected output: 4 -> 2 -> 5 -> 1 -> 3
+
+func printInOrder(_ rootNode: TreeNode?)  {
+   if rootNode == nil {
+      return
+   } else {
+      printInOrder(rootNode?.left)
+      Swift.print(rootNode!.val)
+      printInOrder(rootNode?.right)
+   }
+}
