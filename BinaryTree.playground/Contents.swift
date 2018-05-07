@@ -50,3 +50,25 @@ func printInOrder(_ rootNode: TreeNode?)  {
 }
 
 printInOrder(oneTreeNode)
+
+// Traverse inorder and add node values to array
+func  recursiveHelper(_ rootNode: TreeNode?, resultArray: inout [Int])  {
+   if rootNode == nil {
+      return
+   } else {
+      recursiveHelper(rootNode?.left, resultArray: &resultArray)
+      resultArray.append(rootNode!.val)
+      recursiveHelper(rootNode?.right, resultArray: &resultArray)
+   }
+}
+
+// Traverse inoreder and return node values in array
+func traverseInOrder(_ rootNode: TreeNode?) -> [Int]   {
+   var resultArray:[Int] = []
+   recursiveHelper(rootNode, resultArray: &resultArray)
+   return resultArray
+}
+
+traverseInOrder(oneTreeNode)
+
+
