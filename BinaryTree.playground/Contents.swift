@@ -48,3 +48,5 @@ func printInOrder(_ rootNode: TreeNode?)  {
       printInOrder(rootNode?.right)
    }
 }
+
+printInOrder(oneTreeNode)
