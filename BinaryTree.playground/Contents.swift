@@ -3,10 +3,10 @@
 import UIKit
 
 /*
-#if swift(>=4.0)
-print("Hello, Swift 4!")
-#endif
-*/
+ #if swift(>=4.0)
+ print("Hello, Swift 4!")
+ #endif
+ */
 
 class TreeNode {
    var val: Int
@@ -20,14 +20,14 @@ class TreeNode {
 }
 
 /*
-Binary Tree Example (Well Balanced)
+ Binary Tree Example (Well Balanced)
 
-    1 <-Root
-   / \
-  2   3 <-Children
+ 1 <-Root
  / \
-4   5 <-Leaves
-*/
+ 2   3 <-Children
+ / \
+ 4   5 <-Leaves
+ */
 
 let threeTreeNode = TreeNode(val: 3, left: nil, right: nil)
 let fourTreeNode = TreeNode(val: 4, left: nil, right: nil)
@@ -69,6 +69,47 @@ func traverseInOrder(_ rootNode: TreeNode?) -> [Int]   {
    return resultArray
 }
 
+// traverseInOrder(oneTreeNode)
+
+
+
+/*
+ INVERSE a tree...
+ ORIGINAL
+
+ 1 <-Root
+ / \
+ 2   3 <-Children
+ / \
+ 4   5 <-Leaves
+
+ INVERSE
+ 1
+ / \
+ 3   2
+ / \
+ 5   4
+ Expected result from inOrder...
+ [3,1,5,2,4]
+ */
+
+// Traverse inorder and add node values to array
+func  inverse(ofRootNode node: TreeNode?) -> TreeNode? {
+   if node == nil {
+      return nil
+   } else {
+      let left = inverse(ofRootNode: node?.left)
+      let right = inverse(ofRootNode: node?.right)
+      node?.left = right
+      node?.right = left
+      return node!
+   }
+}
+// Test inverse
 traverseInOrder(oneTreeNode)
+inverse(ofRootNode: oneTreeNode)
+// Expected result from inversed inOrder [3,1,5,2,4]
+traverseInOrder(oneTreeNode)
+
 
 
