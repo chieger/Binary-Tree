@@ -2,6 +2,12 @@
 
 import UIKit
 
+/*
+#if swift(>=4.0)
+print("Hello, Swift 4!")
+#endif
+*/
+
 class TreeNode {
    var val: Int
    var left: TreeNode?
